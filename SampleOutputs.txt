@@ -1,0 +1,17 @@
+Sample Outputs:
+
+Alphabetical rank for 'abab' : 2
+Time Elapsed: 6.22901E-4 seconds.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Alphabetical rank for 'question' : 24572
+Time Elapsed: 0.015451363 seconds.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Alphabetical rank for 'bookkeeper' : 10743
+Time Elapsed: 0.001266331 seconds.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Alphabetical rank for 'antiroyalist' : 4306927
+Time Elapsed: 6.76982E-4 seconds.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Alphabetical rank for 'stationarily' : 43692493
+Time Elapsed: 8.53036E-4 seconds.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
