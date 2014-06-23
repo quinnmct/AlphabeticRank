@@ -7,6 +7,9 @@ import java.util.Arrays;
  * This program determines the alphabetical rank of a word based upon all combinations of letters making up the word.
  * If running in Eclipse, be sure to add a word as an argument by selecting Run > Run Configurations > Arguments.
  * If the argument includes numeric values or symbols, the program will order them based on their Ascii values.
+ * 
+ * UPDATE v 1.2:
+ * Changes all 32 bit INT to 64 bit LONG data types to account for 64 bit integers.
  */
 
 public class AlphabeticRank {
@@ -19,7 +22,7 @@ public class AlphabeticRank {
 	    	
 	    	//find alphabetic rank, calculate time
 	    	long startNano = System.nanoTime(); //start time
-	    	int alphabeticalRank = rank(initCharArr, sortedCharArr);
+	    	long alphabeticalRank = rank(initCharArr, sortedCharArr);
 	    	long timeElapsedNano  = System.nanoTime() - startNano; //finish time
 
 	    	
@@ -29,7 +32,7 @@ public class AlphabeticRank {
 	    }
 	    
 	    //recursive alphabetic rank function
-	    private static int rank(char[] initCharArr, char[] sortedCharArr) {
+	    private static long rank(char[] initCharArr, char[] sortedCharArr) {
 	    	if(initCharArr.length == 0){
 	    		return 1; //add a single rank for this word itself!
 	    	}
@@ -46,7 +49,7 @@ public class AlphabeticRank {
 	    	}
 	    	
 	    	//calculate alphabetic rank of all words before the current index's first letter
-	    	int currentRank = ( factorial(currentLength-1) * chRank ) / currentDenominator(initCharArr);
+	    	long currentRank = ( factorial(currentLength-1) * chRank ) / currentDenominator(initCharArr);
 	    		
 	    	//Prepare variables for next recursive call:
 		    	//1. remove initCharArr[0] from sortedCharArr
@@ -74,8 +77,8 @@ public class AlphabeticRank {
 		}
 		
 	    //find duplicates, calculate their factorials
-	    private static int currentDenominator(char[] initCharArr) {
-			int denom = 1; //if no duplicates, return 1
+	    private static long currentDenominator(char[] initCharArr) {
+			long denom = 1; //if no duplicates, return 1
 			int duplicates=1;
 			
 			if(initCharArr.length>1){
@@ -99,7 +102,7 @@ public class AlphabeticRank {
 		}
 
 		//function calculates factorial
-		public static int factorial(int n){
+		public static long factorial(int n){
 		   if (n == 0) {
 		       return 1;
 		   }else{
